@@ -340,3 +340,59 @@ Use [eth_getTransactionReceipt](https://github.com/ethereum/wiki/wiki/JSON-RPC#e
   "result": "0xe670ec64341771606e55d6b4ca35a1a6b75ee3d5145a99d05921026d1527331"
 }
 ```
+
+## wallet_addEthereumChain
+
+Switch to a Ethereum compatible network. Method specified by [EIP-3085](https://eips.ethereum.org/EIPS/eip-3085)
+
+### Parameters
+
+1. Object - The network config object
+2. `chainId`: Integer ID of the chain as a hex string.
+3. `blockExplorerUrls`(optional): If provided, **MUST** specify one or more URLs pointing to block explorer web sites for the chain.
+4. `chinName`(optional): if provided, **MUST** specify a human-readable name for the chain.;
+5. `iconUrls`(optional): If provided, **MUST** specify one or more URLs pointing to reasonably sized images that can be used to visually identify the chain.
+6. `nativeCurrency`(optional): If provided, **MUST** describe the native currency of the chain using the name, symbol, and decimals fields.
+7. `rpcUrls` (optional): If provided, **MUST** specify one or more URLs pointing to RPC endpoints that can be used to communicate with the chain.
+
+### Example Parameter
+
+```javascript
+[
+  {
+    chainId: "0x89", // 137
+    blockExplorerUrls: ['https://explorer.matic.network/', 'https://explorer-mainnet.maticvigil.com'],
+    chainName: "Matic Mainnet",
+    iconUrls: ['https://i.imgur.com/cjrMIRu.png']
+    nativeCurrency: {
+      name: 'Matic',
+      symbol: 'MATIC',
+      decimals: 18
+    },
+    rpcUrls: ['https://rpc-mainnet.maticvigil.com/', 'https://rpc-mainnet.matic.network'],
+  },
+];
+```
+
+### Returns
+
+`success` - boolean indicating whether the switching is successful
+
+### Example
+
+```javascript
+// Request
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "method": "wallet_addEthereumChain",
+  "params":[{see above}],
+}
+
+// Result
+{
+  "id": 1,
+  "jsonrpc": "2.0",
+  "result": "true"
+}
+```
