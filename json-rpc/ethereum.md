@@ -184,7 +184,7 @@ account, message
   "method": "eth_signTypedData",
   "params": ["0x9b2055d370f73ec7d8a03e965129118dc8f5bf83", {see above}],
 }
-'
+
 
 // Result
 {
@@ -361,15 +361,15 @@ Switch to a Ethereum compatible network. Method specified by [EIP-3085](https://
 [
   {
     chainId: "0x89", // 137
-    blockExplorerUrls: ['https://explorer.matic.network/', 'https://explorer-mainnet.maticvigil.com'],
+    blockExplorerUrls: ["https://explorer.matic.network/", "https://explorer-mainnet.maticvigil.com"],
     chainName: "Matic Mainnet",
-    iconUrls: ['https://i.imgur.com/cjrMIRu.png']
+    iconUrls: ["https://i.imgur.com/cjrMIRu.png"]
     nativeCurrency: {
-      name: 'Matic',
-      symbol: 'MATIC',
+      name: "Matic",
+      symbol: "MATIC",
       decimals: 18
     },
-    rpcUrls: ['https://rpc-mainnet.maticvigil.com/', 'https://rpc-mainnet.matic.network'],
+    rpcUrls: ["https://rpc-mainnet.maticvigil.com/", "https://rpc-mainnet.matic.network"],
   },
 ];
 ```
